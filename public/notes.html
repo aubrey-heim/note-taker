@@ -45,12 +45,14 @@
         noteText: $(".note-textarea").val().trim(),
       };
 
-      $.post("/api/tables", newReservation)
+      $.post("/api/notes", newReservation)
         .then(function(data) {
           console.log("add.html", data);
           alert("Adding note...");
         });
 
+        $(".note-title").val("");
+        $(".note-textarea").val("")
       
     });
   </script>
