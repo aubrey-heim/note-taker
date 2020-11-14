@@ -45,7 +45,7 @@
         noteText: $(".note-textarea").val().trim(),
       };
 
-      $.post("/api/notes", newReservation)
+      $.post("/api/notes", newNote)
         .then(function(data) {
           console.log("add.html", data);
           alert("Adding note...");
