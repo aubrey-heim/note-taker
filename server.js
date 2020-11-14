@@ -2,6 +2,7 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
+const notesdb = require("./db/db.json")
 
 // Sets up the Express App
 // =============================================================
@@ -15,7 +16,15 @@ app.use(express.static('public'))
 
 // Notes (DATA)
 // =============================================================
-var notes = []
+app.get("/api/notes", function(req,res){
+  return res.json(notesdb)
+})
+
+app.post("/api/notes", function(req,res){
+  console.log(req.body);
+  req.send(notesdb);
+  console.log(req.body);
+})
 
 // Routes
 // =============================================================
