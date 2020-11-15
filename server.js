@@ -23,7 +23,9 @@ app.get("/api/notes", function(req,res){
 
 app.post("/api/notes", function(req,res){
   let newNote = req.body
-  notesList = notesdb
+  let notesList = notesdb
+  let noteId = Date.now()
+  newNote["id"] = noteId
   notesList.push(newNote)
   fs.writeFile("./db/db.json", JSON.stringify(notesList), function(err) {
     if (err) {
