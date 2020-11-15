@@ -2,6 +2,7 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
+var fs = require("fs")
 const notesdb = require("./db/db.json")
 
 // Sets up the Express App
@@ -21,9 +22,16 @@ app.get("/api/notes", function(req,res){
 })
 
 app.post("/api/notes", function(req,res){
-  console.log(req.body);
-  req.send(notesdb);
-  console.log(req.body);
+  let newNote = req.body
+  notesList = notesdb
+  notesList.push(newNote)
+  fs.writeFile("./db/db.json", JSON.stringify(notesList), function(err) {
+    if (err) {
+        return console.log(err);
+    }
+    console.log("Note added.");
+    })
+  res.json(true)
 })
 
 // Routes
