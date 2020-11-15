@@ -36,26 +36,6 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript">
-   
-    $(".save-note").on("click", function(event) {
-      event.preventDefault();
-      var newNote = {
-        noteTitle: $(".note-title").val().trim(),
-        noteText: $(".note-textarea").val().trim(),
-      };
-
-      $.post("/api/notes", newNote)
-        .then(function(data) {
-          console.log("add.html", data);
-          alert("Adding note...");
-        });
-
-        $(".note-title").val("");
-        $(".note-textarea").val("")
-      
-    });
-  </script>
   <script src="./assets/js/index.js"></script>
 </body>
 
