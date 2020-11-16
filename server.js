@@ -3,7 +3,8 @@
 var express = require("express");
 var path = require("path");
 var fs = require("fs")
-const notesdb = require("./db/db.json")
+const notesdb = require("./db/db.json");
+const { json } = require("express");
 
 // Sets up the Express App
 // =============================================================
@@ -34,6 +35,19 @@ app.post("/api/notes", function(req,res){
     console.log("Note added.");
     })
   res.json(true)
+})
+
+app.delete("/api/notes/:id", function(req, res)
+{
+  let deletedId = parseInt(req.params.id)
+  let notesList = notesdb
+  notesList = notesList.filter(note => note.id !== deletedId)
+  fs.writeFile("./db/db.json", JSON.stringify(notesList), function(err) {
+    if (err) {
+        return console.log(err);
+    }
+    console.log("Note deleted.");
+  })
 })
 
 // Routes
