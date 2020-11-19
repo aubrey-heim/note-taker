@@ -14,6 +14,7 @@
 This project is the eleventh homework assignment of the UW Coding Bootcamp. For this project I was asked to create an application that would store notes in a database. The application needed the ability to get, post, and delete notes. This application utilized the Express npm package and deployed to a dynamic port. 
 
 ### Deployed Application
+Application deployed at: https://quiet-mountain-38282.herokuapp.com/
 <img src="./assets/deployed.gif" alt="gif of deployed page in use">
 
 ## Installation
@@ -24,7 +25,7 @@ To use this project: <ol>
 <li>Clone the repository: "git@github.com:aubrey-heim/Employee-Summary.git"</li>
 <li>Install the dependencies using “npm i”</li>
 <li>Run the application using “npm start”</li>
-<li>Navigate to “http://localhost:3001</li>
+<li>Navigate to “http://localhost:3001"</li>
 </ol>
 
 ## License
