@@ -22,7 +22,7 @@ To install necessary dependencies, run the following command: npm i
 
 ## Usage
 To use this project: <ol>
-<li>Clone the repository: "git@github.com:aubrey-heim/Employee-Summary.git"</li>
+<li>Clone the repository: "git@github.com:aubrey-heim/note-taker.git"</li>
 <li>Install the dependencies using “npm i”</li>
 <li>Run the application using “npm start”</li>
 <li>Navigate to “http://localhost:3001"</li>
